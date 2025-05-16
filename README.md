@@ -26,12 +26,14 @@ The diagram below illustrates how the ShortLink service handles requests with co
 
 #### Encode
 ```powershell
-curl.exe -X POST http://localhost:8080/encode `
-    -H "Content-Type: application/json" `
-    -d '{ "url": "https://big.timothy" }'
+Invoke-WebRequest -Uri "http://localhost:8080/encode" `
+    -Method Post `
+    -Headers @{ "Content-Type"="application/json" } `
+    -Body '{ "url": "http://big.timothy" }'
 
 #### Decode
 ```powershell
-curl.exe -X POST http://localhost:8080/decode `
-    -H "Content-Type: application/json" `
-    -d '{ "url": "https://lil.tim" }'
+Invoke-WebRequest -Uri "http://localhost:8080/decode" `
+    -Method Post `
+    -Headers @{ "Content-Type"="application/json" } `
+    -Body '{ "shortUrl": "http://lil.tim/RandomUUID" }'
