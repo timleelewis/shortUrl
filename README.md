@@ -5,6 +5,7 @@
 ### Prerequisites
 - Java 22
 - Maven
+- VS Code or preferred IDE
 
 ### Build and Start
 ```bash
