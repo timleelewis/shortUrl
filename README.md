@@ -8,7 +8,7 @@
 - VS Code or preferred IDE
 
 ### Build and Start
-bash/powershell
+bash/powershell:
 
 mvn clean install
 mvn spring-boot:run -Dspring-boot.run.arguments="--shorturl.concurrent.limit=10"
@@ -27,14 +27,14 @@ The diagram below illustrates how the ShortUrl service handles requests with con
 ### Test Endpoints
 
 #### Encode
-powershell
+powershell:
 Invoke-WebRequest -Uri "http://localhost:8080/encode" `
     -Method Post `
     -Headers @{ "Content-Type"="application/json" } `
     -Body '{ "url": "http://big.timothy" }'
 
 #### Decode
-powershell
+powershell:
 Invoke-WebRequest -Uri "http://localhost:8080/decode" `
     -Method Post `
     -Headers @{ "Content-Type"="application/json" } `
